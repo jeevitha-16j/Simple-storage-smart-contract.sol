@@ -96,6 +96,7 @@ getValue() (The Open Book)
   public: Anyone can call this function.
   view: This is important! view functions promise not to change the contract's state. Because they only read data, calling them off-chain (not as a transaction) costs no gas!
   returns (int): This tells us that the function will give us back an int type (our current value).
+
 🚀 Ready to Deploy?
 To bring SimpleStorage to life on a blockchain, you'll need a Solidity compiler (like the one in Remix IDE, or tools like Hardhat/Truffle).
   Save: Save the code as SimpleStorage.sol.
@@ -109,6 +110,7 @@ Call increment() or decrement() (as the owner) to see the value change and event
  Call getValue() anytime to see the current number, completely free!
  
 Check the owner variable to confirm who holds the keys.
+
 💡 What's Next? (Ideas for Your Blockchain Journey)
 This SimpleStorage contract is just the beginning! Here are some ideas to expand your knowledge:
  
