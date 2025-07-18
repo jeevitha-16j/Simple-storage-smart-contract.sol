@@ -1,0 +1,30 @@
+pragma solidity ^0.8.0;
+
+contract SimpleStorage {
+    int private value;
+    address public owner;
+    event ValueUpdated(int newValue, string action, address updatedBy);
+
+    constructor() {
+        owner = msg.sender;
+        value = 0;
+    }
+
+    modifier onlyOwner() {
+        require(msg.sender == owner, "Access denied: Only owner can modify the value");
+        _;
+    }
+
+    function increment() public onlyOwner {
+        value += 1;
+        emit ValueUpdated(value, "Incremented", msg.sender);
+    }
+
+    function decrement() public onlyOwner {
+        value -= 1;
+        emit ValueUpdated(value, "Decremented", msg.sender);
+    }
+    function getValue() public view returns (int) {
+        return value;
+    }
+}
